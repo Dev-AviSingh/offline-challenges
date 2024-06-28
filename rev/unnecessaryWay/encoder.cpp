@@ -4,8 +4,7 @@
 #include<fstream>
 using namespace std;
 
-string FLAG = "0CTF{Hat3d_R3curs10n_From_My_Dil}";
-
+string FLAG;
 unsigned int key = 69;
 
 void encrypt(string& flag, int pos){
@@ -22,7 +21,8 @@ void encrypt(string& flag, int pos){
 }
 
 
-int main(){
+int main(int argc, char *argv[]){
+    string FLAG(argv[1]);
     for(int i = 0; i < FLAG.length(); i++){
         cout << (int) FLAG[i] << " ";
     }
