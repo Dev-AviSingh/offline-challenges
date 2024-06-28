@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+</head>
+<body>
+  <h1>Messages</h1>
+  <a href="/auth/register">Register</a> | <a href="/auth/login">Login</a>
+  <div id="messages">
+    <% if (messages.length > 0) { %>
+      <ul>
+        <% messages.forEach(message => { %>
+          <li>
+            <img src="data:image/jpeg;base64,<%= message.profilePic %>" alt="Profile Pic" width="50" height="50">
+            <p><strong><%= message.username %>:</strong> <%= message.content %></p>
+            <p>Posted on: <%= new Date(message.date).toLocaleString() %></p>
+            <p>Likes: <%= message.likes %></p>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No messages available.</p>
+    <% } %>
+  </div>
+</body>
+</html>
