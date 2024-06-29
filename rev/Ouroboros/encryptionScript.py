@@ -1,4 +1,4 @@
-flag = 'snakeseatsnakes'
+flag = '____redacted___'
 import numpy as np
 
 shift = 3
